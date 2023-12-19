@@ -1,1 +1,1 @@
-# bp-uigobal-framework
+# bp-gobal-starter-kit
