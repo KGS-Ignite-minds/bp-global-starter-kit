@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+body {
+    font-family: Helvetica;
+    background-color: #4a1160;
+    height: 100vh; /* Set to 100% viewport height */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    position: absolute;
+    width: 300px;
+    text-align: left;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, -50%);
+}
+
+.tooltip-a {
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: -90px;
+    margin-right: 50px
+}
+.tooltip-b {
+    position: relative;
+    margin-bottom: 20px; /* Increase the margin to create more space */
+    margin-left: 280px;
+    margin-right: 90px;
+}
+h2 {
+    color: rgb(7, 2, 7);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+h2:hover {
+    opacity: 1;
+}
+
+.content-a {
+    width: 500px;
+    background: #fff;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 12%);
+    border-radius: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.7s;
+}
+.content-b {
+    width: 500px;
+    background: #fff;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+    border-radius: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.7s;
+}
+.content-a,.content-b h2 {
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+/* .content-b h2 {
+    font-weight: 900;
+    margin-bottom: 10px;
+} */
+.content-a,.content-b p {
+    font-weight: 900;
+    line-height: 1.4;
+    margin-top: 1px;
+}
+/* .content-b p {
+    font-weight: 900;
+    line-height: 1.4;
+    margin-top: 1px;
+} */
+.content-a::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    top: -7.5px; /* Adjust the top position to place it at the top */
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+.content-b::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    bottom: -7.5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+h2:hover + .content-a {
+    visibility: visible;
+    opacity: 1;
+}
+h2:hover + .content-b {
+    visibility: visible;
+    opacity: 1;
+}
+
+.next-button-container {
+    text-align: right;
+}
+
+.tooltip-a .content-a .next-button {
+    width: 100px;
+    align-self: flex-end;
+    margin-left: 320px;
+    font-family: 'Helvetica';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 200;
+    border: none;
+    outline: none;
+    background-color: #4535f2;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.tooltip-b .content-b button {
+    font-family: 'Helvetica';
+    display: flex;
+    justify-content: center;
+    margin-left: 180px;
+    margin-bottom: auto;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 200;
+    border: none;
+    outline: none;
+    background-color: rgb(163, 147, 202);
+    color: #211d52;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-b .content-b .lock-button {
+    padding: 10px 20px;
+    margin-top: auto;
+    margin-left: 120px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #7a259c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #7a259c;
+    color: white;
+}
+
+@media (max-width: 750px) {
+    .container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+@media (max-width: 402px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .tooltip-a{
+        position: relative;
+        margin-bottom: 20px;
+        margin: -55px;
+        .content-a {
+          font-size: 10px;
+        }
+        .button-plus {
+          height: 20px;
+          width: 20px;
+        }
+        .next-button {
+          margin-left: 0;
+          margin-top: 0;
+        }
+      }
+      .tooltip-b{
+        position: relative;
+        margin-bottom: 10px;
+        margin: -55px;
+        
+        .content-b {
+          font-size: 10px;
+        }
+        .lock-button {
+            height: 10px;
+            width: 50px;
+          }
+        .button {
+            height: 25px;
+            width: 70px;
+        }
+      }
+}
+
+
