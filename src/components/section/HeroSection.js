@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.scss';
 import { Button } from '../button/Button';
 import './HeroSection.scss';
+import {NavLink} from 'react-router-dom'
 
 function HeroSection() {
   return (
@@ -15,8 +16,13 @@ function HeroSection() {
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-          GET STARTED
+    
+          <NavLink to="/starter-page" >     Click Here      </NavLink>
         </Button>
+
+
+
+
         <Button
           className='btns'
           buttonStyle='btn--primary'
