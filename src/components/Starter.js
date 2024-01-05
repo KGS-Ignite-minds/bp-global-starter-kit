@@ -88,10 +88,10 @@ const ShadowBox = ({ shadow,app }) => {
               <div className="wave"></div>
               <div className="wave"></div>
               <Box className="box-card">
-                <Avatar alt="Remy Sharp" sx={{ width: 56, height: 56 }} src={app.image} />
+                <Avatar alt="Remy Sharp" sx={{ width: 65, height: 65 }} src={app.image} />
               </Box>
               <Box >
-                <div class="cursive">Click to create <span className='name-app' ><u><b>{app.name}</b></u></span> app.</div>
+                <div className="cursive">Click to create <span className='name-app' ><u><b>{app.name}</b></u></span> app.</div>
               </Box>
 
             </div>
@@ -211,26 +211,29 @@ function Main() {
 
   return (
     <>
-
+    {/* <Card sx={{ minWidth: 275,margin:'20px 20px 20px 20px',background:'#fff;' }}>
+      <CardContent> */}
        <div className='wrapper-boxx'>
        <div className='main-head-div'>
         <div className='head-tit'>
-          <h3>Select your tech stack to generate starter kit</h3>
+          <h3>Generate Starter Kit</h3>
           </div>
         
         </div>
+
+        <hr className="new1"></hr>
     
    
-      <Grid container spacing={gridSpacing}>
+      <Grid  style={{marginTop:'10px'}} container spacing={gridSpacing}>
         <Grid item xs={12}>
 
           {/* <SubCard  className='sub-tit' title="Basic Shadow"> */}
             <Grid container spacing={gridSpacing}>
 
               {applist.map(item=>(
-              <Grid item xs={12} sm={6} md={4} lg={3}>
-                <Link to={item.route}>
-                <ShadowBox shadow="22" app={item} />
+              <Grid item xs={12} sm={6} md={6} lg={4}>
+                <Link  style={{ textDecoration:'none'}} to={item.route}>
+                <ShadowBox shadow="10" app={item} />
                 </Link>
        
               </Grid>
@@ -242,8 +245,9 @@ function Main() {
       </Grid>
 
       </div> 
-     
  
+      {/* </CardContent>
+      </Card>  */}
 
     </>)
 

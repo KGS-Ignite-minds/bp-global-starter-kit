@@ -35,7 +35,8 @@ float: left;
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: auto;
-    background: linear-gradient(315deg, rgba(60,132,206,1) 38%, rgb(78, 65, 196) 68%);
+    /* background: linear-gradient(315deg, rgb(74, 74, 231) 38%, rgb(78, 65, 196) 68%); */
+    /* background: #49369b;; */
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     /* background-attachment: fixed; */
@@ -105,19 +106,24 @@ float: left;
 .box-card{
  
     position: relative;
-    left: 315px;
-    top:10px
+    left: 295px;
+    top: 19px;
+
+    
 }
 
 .cursive {
     /* font-family: cursive; */
  
     font-size: large;
-    background-color:#f1f1e6;
+    /* background-color:#f1f1e6; */
     padding-left: 30px;
+    margin-top: -22px;
+    text-decoration: none !important;
   }
   .name-app{
     /* color: blue; */
+    text-decoration: none !important;
   }
 
   .sub-tit{
@@ -125,16 +131,22 @@ float: left;
   }
   .wrapper-boxx{
     padding: 20px;
+    width: 1200px;
+    margin: auto;
+
   }
   .head-tit{
-    margin: auto;
-    /* background-color: aqua; */
+   
     width: 499px;
+    font-size: 22px;
+    color:#424242ed;
   }
   .main-head-div{   
-     border-bottom: 1px solid black;
+     /* border-bottom: 1px solid black; */
     margin: 10px;
-    margin-bottom: 70px;}
+    margin-top: 60px;
+    /* margin-bottom: 70px; */
+}
 
 .form-wrapper{
     /* background-color: aliceblue; */
@@ -143,3 +155,12 @@ float: left;
     position: fixed;
    
 }
+
+hr.new1 {
+    border-top: 1px solid  #49369b;
+    
+  }
+
+  .search_box{
+    margin-left: 59px;
+  }
