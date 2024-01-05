@@ -8,7 +8,7 @@ import './Starter.css';
 import Avatar from '@mui/material/Avatar';
 import React, { useState, useEffect, useRef } from "react";
 import LandingPage from "../containers/landingPage";
-import Header  from '../containers/Header';
+
 
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -25,7 +25,10 @@ import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import Appform from './App_form'
 import { makeStyles } from '@mui/styles';
+import {Link} from 'react-router-dom'
 
+
+import CardContent from '@mui/material/CardContent';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -154,44 +157,53 @@ ShadowBox.propTypes = {
 
 
 
-function About() {
+function Main() {
 
   const [applist, setAppList] = useState([
   {
      name:"Angular",
-     image:"/images/angular.png"
+     image:"/images/angular.png",
+     route:"form/angular-form"
   },
   {
     name:"React",
-    image:"/images/react.jpeg"
+    image:"/images/react.jpeg",
+    route:"form/react-form"
  },
  {
   name:"Vue",
-  image:"/images/vue.png"
+  image:"/images/vue.png",
+  route:"form/vue-form"
 },
 {
   name:"Node js",
-  image:"/images/node.png"
+  image:"/images/node.png",
+  route:"form/node-form"
 },
 {
   name:"Python/Django",
-  image:"/images/python.png"
+  image:"/images/python.png",
+  route:"form/django-form"
 },
 {
   name:".Net",
-  image:"/images/dotnet.png"
+  image:"/images/dotnet.png",
+  route:"form/dotnet-form"
 },
 {
   name:"CI/CD ",
-  image:"/images/cicd.jpeg"
+  image:"/images/cicd.jpeg",
+  route:"form/pipeline-form"
 },
 {
   name:"QA/Testing",
-  image:"/images/test.jpeg"
+  image:"/images/test.jpeg",
+  route:"form/testing-form"
 },
 {
   name:"Core Java",
-  image:"/images/java.png"
+  image:"/images/java.png",
+  route:"form/java-form"
 },
 
 ]);
@@ -199,15 +211,16 @@ function About() {
 
   return (
     <>
-    <Header/>
+
        <div className='wrapper-boxx'>
        <div className='main-head-div'>
         <div className='head-tit'>
-          <h1 >Select any to genrate boiler plate</h1>
+          <h3>Select your tech stack to generate starter kit</h3>
           </div>
         
         </div>
-         
+    
+   
       <Grid container spacing={gridSpacing}>
         <Grid item xs={12}>
 
@@ -216,7 +229,10 @@ function About() {
 
               {applist.map(item=>(
               <Grid item xs={12} sm={6} md={4} lg={3}>
+                <Link to={item.route}>
                 <ShadowBox shadow="22" app={item} />
+                </Link>
+       
               </Grid>
               ))}
             </Grid>
@@ -224,9 +240,12 @@ function About() {
 
         </Grid>
       </Grid>
+
       </div> 
+     
+ 
 
     </>)
 
 }
-export default About;
+export default Main;

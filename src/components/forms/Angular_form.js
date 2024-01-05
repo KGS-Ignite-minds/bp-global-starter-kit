@@ -1,27 +1,24 @@
-import { gridSpacing } from './constant';
-import { Box, Card, Grid } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
+import './Form.scss';
+
+
+import { gridSpacing } from '../constant';
+import { Box, Card, Grid } from '@mui/material';
+
 import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
+
 import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
 import Select from '@mui/material/Select';
 
 import MenuItem from '@mui/material/MenuItem';
+import './Form.scss';
 
-
-const App_form = () => {
-  return (<>
-
-    <div className="form-wrapper">
+function Angular_form() {
+  return (
+  <>  
+  <div className="form-wrapper">
       <Grid container spacing={gridSpacing}>
         <Grid item xs={12}>
 
@@ -141,6 +138,8 @@ const App_form = () => {
       </Grid>
     </div>
 
-  </>);
-};
-export default App_form;
+  </>
+  );
+}
+
+export default Angular_form;

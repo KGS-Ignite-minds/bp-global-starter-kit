@@ -17,7 +17,7 @@ function HeroSection() {
           buttonSize='btn--large'
         >
     
-          <NavLink to="/starter-page" >     Click Here      </NavLink>
+          <NavLink to="wrapper" >     Click Here      </NavLink>
         </Button>
 
 
