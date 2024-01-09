@@ -8,7 +8,7 @@ function Wrapper() {
   return (
     <>
       <Header />
-      <SideBar />
+      {/* <SideBar /> */}
       <Outlet />
     </>
   );
