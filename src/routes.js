@@ -9,51 +9,54 @@ const routers = [
   // },
   {
     path: "/",
-    Component: lazy(() => import("./components/pages/Home")),
+    Component: lazy(() => import("./artist-components/pages/Home")),
     exact: true,
-    childs:[]
+    childs: [],
   },
 
   {
     path: "/wrapper",
-    Component: lazy(() => import("./components/Wrapper")),
+    Component: lazy(() => import("./artist-components/Wrapper")),
     exact: true,
-    childs:[
-
+    childs: [
       {
         path: "starter-page",
-        Component: lazy(() => import("./components/Starter")),
+        Component: lazy(() => import("./artist-components/Starter")),
         exact: true,
-        is_index:true
+        is_index: true,
       },
       {
         path: "form/react-form",
-        Component: lazy(() => import("./components/forms/React_form")),
+        Component: lazy(() => import("./artist-components/forms/React_form")),
         exact: true,
       },
       {
         path: "form/vue-form",
-        Component: lazy(() => import("./components/forms/Vue_form")),
+        Component: lazy(() => import("./artist-components/forms/Vue_form")),
         exact: true,
       },
       {
         path: "form/angular-form",
-        Component: lazy(() => import("./components/forms/Angular_form")),
+        Component: lazy(() => import("./artist-components/forms/Angular_form")),
         exact: true,
       },
       {
         path: "form/dotnet-form",
-        Component: lazy(() => import("./components/forms/Dotnet_form")),
+        Component: lazy(() => import("./artist-components/forms/Dotnet_form")),
         exact: true,
       },
 
       {
         path: "form/java-form",
-        Component: lazy(() => import("./components/forms/Java_form")),
+        Component: lazy(() => import("./artist-components/forms/Java_form")),
         exact: true,
       },
-
-    ]
+      {
+        path: "dashboard",
+        Component: lazy(() => import("./artist-components/pages/Dashboard")),
+        exact: true,
+      },
+    ],
   },
 
   // {
@@ -61,12 +64,11 @@ const routers = [
   //   Component: lazy(() => import("./components/Product")),
   //   exact: true,
   // }
-  
 ];
 const Routers = () => {
   return (
     <Routes>
-      {routers.map(({ path, Component, exact,childs}) => (
+      {routers.map(({ path, Component, exact, childs }) => (
         <Route
           path={path}
           key={path}
@@ -77,41 +79,32 @@ const Routers = () => {
             </Suspense>
           }
         >
-           
-
-
-
-           {childs.map(({ path, Component, exact,is_index }) => (
+          {childs.map(({ path, Component, exact, is_index }) => (
             <>
-             { !is_index &&    
-             
-             <Route
-             path={path}
-             key={path}
-             exact={exact}
-             element={
-               <Suspense fallback={null}>
-                 <Component />
-               </Suspense>
-             }
-           />
-           }
-          { is_index &&    
-             <Route
-             index 
-             element={
-               <Suspense fallback={null}>
-                 <Component />
-               </Suspense>
-             }
-             />
-            }
-
-           </>
-
-           ))}
-
-
+              {!is_index && (
+                <Route
+                  path={path}
+                  key={path}
+                  exact={exact}
+                  element={
+                    <Suspense fallback={null}>
+                      <Component />
+                    </Suspense>
+                  }
+                />
+              )}
+              {is_index && (
+                <Route
+                  index
+                  element={
+                    <Suspense fallback={null}>
+                      <Component />
+                    </Suspense>
+                  }
+                />
+              )}
+            </>
+          ))}
         </Route>
       ))}
     </Routes>
